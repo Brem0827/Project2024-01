@@ -21,3 +21,11 @@
 </p>
 
 [![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=guswhd284)](https://www.acmicpc.net/user/guswhd284)
+
+🔋 2024.05.24
+
+<details><summary>💬 설치 </summary>
+
+- `npm install typescript --save-de`
+
+</details>
