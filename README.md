@@ -22,6 +22,109 @@
 
 [![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=guswhd284)](https://www.acmicpc.net/user/guswhd284)
 
+🔋 2024.05.18
+
+<details><summary>💬 타입스크립트와 자바스크립트의 차이 </summary>
+
+- 타입스크립트는 자바스크립트를 확장한 상위 호환 언어입니다.
+
+- 자바스크립트의 코드는 그대로 타입스크립트 코드로 읽을수 있습니다.
+
+- 자바스크립트에 주로 다음 기능을 추가한 것 입니다.
+
+- `타입 정의`
+
+- `인터페이스와 클래스`
+
+- `null/undefined-safe`
+
+- `범용적인 클래스나 메서드 타입을 실현하는 제네릭`
+
+- `편집기의 입력 자동완성`
+
+- `그 외, ECMA에서 정의되어 있는 자바스크립트의 최신사양`
+
+</details>
+
+<details><summary>💬 변수 </summary>
+
+- 변수 선언에는 var, let, const를 사용합니다.
+
+- 변수명 뒤에 `: 타입`을 추가해 타입 애너테이션을 합니다.(생략 가능)
+
+`var 변수 : 타입 = 값`
+
+`let 변수 : 타입 = 값`
+
+`const 변수 : 타입 = 값`
+
+``` tsx
+
+function calc(isSum: boolean) {
+  let a = 100
+  if(isSum) {
+    let b = a + 1
+    return b;
+  }
+  return b
+}
+
+```
+
+- const 변수는 let 변수와 같은 스코프 규칙을 갖습니다.
+
+``` tsx
+
+const num: number = 100
+
+num = 200
+
+```
+
+</details>
+
+<details><summary>💬 배열 </summary>
+
+- 배열에 타입을 지정할 때는 그 배열을 구성하는 타입과 [] 표기를 사용합니다.
+
+```tsx
+
+const array: string[] = []
+array.push('abc')
+array.push(1) // 배열 타입과 맞지 않으므로 에러가 발생
+
+```
+
+</details>
+
+<details><summary>💬 객체 타입 </summary>
+
+- 객체는 키와 값을 이용한 데이터 형식의 인스턴스입니다.
+
+```tsx
+
+const user: { name: string; age: number; } = {
+  name: 'Hana',
+  age: 36
+}
+
+console.log(user.name)
+console.log(user.age)
+
+```
+
+```tsx
+
+function printName(obj: { firstName: string; lastName?: string }) {
+  // ...
+}
+
+printName({ firstName: 'Hyunjong' })
+
+```
+
+</details>
+
 🔋 2024.05.16
 
 <details><summary>💬 Next.js란? </summary>
