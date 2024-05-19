@@ -22,6 +22,124 @@
 
 [![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=guswhd284)](https://www.acmicpc.net/user/guswhd284)
 
+🔋 2024.05.19
+
+<details><summary>💬 any </summary>
+
+- 이름 그대로 모든 타입을 허용하는 타입입니다.
+
+- 특정한 값에 대해 타입 체크 구조를 적용하고 싶지 않을 때 사용합니다.
+
+```tsx
+
+let user: any = { firstName: 'Lee' }
+
+// 다음 행의 코드는 모두 컴파일러 에러가 발생하지 않습니다.
+user.hello()
+user()
+user.age = 100
+user = 'Hello'
+
+// 다른 타입으로 대입해도 에러가 발생하지 않습니다.
+const n: number = user
+
+```
+
+</details>
+
+<details><summary>💬 함수 </summary>
+
+- 타입스크립트의 함수에서는 인수와 반환값의 타입을 지정 할 수 있습니다.
+
+```tsx
+
+function(인수_1_: 타입1, 인수_2_: 타입2 ...): 반환값{
+  // ...
+}
+
+```
+
+```tsx
+
+function sayHello(name: string): string {
+  return `Hello ${name}`
+}
+
+sayHello('Lee')
+
+```
+
+
+```tsx
+
+(인수명: 인수_타입): 반환값_타입 => 자바스크립트_식
+
+let sayHello = (name: string => `Hello ${name}`)
+
+```
+
+```tsx
+
+(인수명: 인수_타입) ==> 반환값_타입
+
+```
+
+</details>
+
+<details><summary>💬 타입추론 </summary>
+
+- 타입스크립트에서 명시적인 변수의 초기화를 수행하면 타입 추론을 통해 자동적으로 타입이 결정되는 기능이 있습니다.
+
+```tsx
+
+const age = 10
+console.log(age.length) // 에러발생(length 속성이 없기 때문)
+
+const user = {
+  name: 'Lee',
+  age: 25
+}
+
+console.log(user.age.length) // 에러발생
+
+```
+
+
+```tsx
+
+// window.confirm 함수의 반환 타입은 boolean인 것을 타입스크립트가 알고 있으므로 대입하는 함수 타입이 일치하지 않으면 에러 발생
+window.confirm = () => {
+  console.log('confirm 함수')
+}
+
+```
+
+</details>
+
+<details><summary>💬 타입 어시션 </summary>
+
+- 타입스크립트가 구체적인 타입을 알 수 없는 경우도 있습니다.
+
+- 타입스크립트에서 document.getElementById()로 얻을 수 있는 대상의 타입에 관여 할 수 없으므로 div, canvas 등을 자동으로 판정해서 처리하지 않습니다.
+
+```tsx
+
+const myCanvas = document.getElementById('main_canvas')
+console.log(myCanvas.width) // 에러발생
+
+```
+
+```tsx
+
+const foo: any = 'test'
+const bar: number = foo as number
+// 컴파일 시에는 number 타입으로서 다뤄져 에러가 발생하지 않지만, 실행 시 string 타입으로 전달되므로 에러 발생
+console.log()
+
+```
+
+</details>
+
 🔋 2024.05.18
 
 <details><summary>💬 타입스크립트와 자바스크립트의 차이 </summary>
