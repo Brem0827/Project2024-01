@@ -22,6 +22,112 @@
 
 [![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=guswhd284)](https://www.acmicpc.net/user/guswhd284)
 
+🔋 2024.05.20
+
+<details><summary>💬 타입 앨리어스 </summary>
+
+- 타입 앨리어스는 타입 지정의 별명을 덧붙이는 기능입니다.
+
+- 타입 앨리어스를 활용하면 타입 정의에 이름을 붙일 수 있습니다.
+
+- 그 이름을 참조하여 같은 타입을 여러 차례 사용할 수 있습니다.
+
+- type 키워드를 사용하여 지정합니다.
+
+- `type 타입명 = 값`
+
+- `type Name = string`
+
+```tsx
+
+type Point = {
+  x: number;
+  y: number;
+}
+
+function printPoint(point: Point) {
+  console.log(`x좌표는 ${point.x}입니다.`)
+  console.log(`y좌표는 ${point.y}입니다.`)
+}
+
+printPoint({ x: 100, y: 100})
+
+```
+
+- 함수 자체의 타입도 타입 앨리어스로 정의 할 수 있습니다.
+
+```tsx
+
+type Formatter = (a: string) => string
+
+function printName(firstName: string, formatter: Formatter) {
+  console.log(formatter(firstName))
+}
+
+```
+
+- 객체의 키 이름을 명시하지 않고 타입 앨리어스를 정의할 수도 있습니다.
+
+
+```tsx
+
+const labels: Label = {
+  topTable: '톱 페이지의 제목입니다.',
+  topSubTitle: '톱 페이지의 하위 제목입니다.',
+  topFeature1: '톱 페이지의 기능 1입니다.',
+  topFeature2: '톱 페이지의 기능 2입니다.',
+}
+
+const foo: Label = {
+  message: 100
+}
+
+```
+
+</details>
+
+<details><summary>💬 인터페이스 </summary>
+
+- 타입스크립트의 인터페이스는 타입 앨리어스와 비슷한 기능이지만, 보다 확장성이 높은 열린 기능을 갖고 있습니다.
+
+- 클래스와 함께 많이 사용합니다.
+
+```tsx
+
+interface 타입명 {
+  속성_1: 타입_1;
+  속성_2: 타입_2;
+}
+
+```
+
+```tsx
+
+interface Point {
+  x: number;
+  y: number;
+  z?: number;
+}
+
+interface Colorful {
+  color: string;
+}
+
+interface Circle {
+  radius: number;
+}
+
+interface ColorfulCircle extends Colorful, Circle {}
+
+const cc: ColorfulCircle = {
+  color: '빨강',
+  radius: 10
+}
+
+```
+
+</details>
+
 🔋 2024.05.19
 
 <details><summary>💬 any </summary>
@@ -116,7 +222,7 @@ window.confirm = () => {
 
 </details>
 
-<details><summary>💬 타입 어시션 </summary>
+<details><summary>💬 타입 어서션 </summary>
 
 - 타입스크립트가 구체적인 타입을 알 수 없는 경우도 있습니다.
 
