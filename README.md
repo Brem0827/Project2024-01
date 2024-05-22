@@ -22,6 +22,142 @@
 
 [![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=guswhd284)](https://www.acmicpc.net/user/guswhd284)
 
+🔋 2024.05.22
+
+<details><summary>💬 클래스 </summary>
+
+- 타입스크립트는 ES2015에서 자바스크립트에 도입된 클래스 표기법에 타입을 붙일 수 있습니다.
+
+```tsx
+
+class Point {
+  x: number;
+  y: number;
+
+  // 인수가 존재하지 않을 경우 초깃값을 지정
+  constructor(x: number = 0; y: number = 0) {
+    this.x = x
+    this.y = y
+  }
+
+  // 반환값이 없을 경우 void를 지정
+  moveX(n: number): void {
+    this.x += n
+  }
+
+  moveY(n: number): void {
+    this.y += n
+  }
+}
+
+const point = new Point()
+point.moveX(10)
+console.log(`${point.x}, ${point.y}`) // 10, 0
+
+```
+
+```tsx
+
+class Point3D extends Point {
+  z: number;
+
+  constructor(x: number = 0, y: number = 0, z: number = 0) {
+    super(x,y)
+    this.z =z
+  }
+
+  moveZ(n: number): void {
+    this.z += n
+  }
+}
+
+const point3D = new Point3D()
+// 상속원의 메서드를 호출 할 수 있다.
+point3D.movex(10)
+point3D.movez(20)
+console.log(`${point3D.x}, ${point3D.y}, ${point3D.z}`) // 10, 0, 20
+
+```
+
+```tsx
+
+interface IUser {
+  name: string;
+  age: number;
+  sayHello: () => string;
+}
+
+class User implements IUser {
+  name: string;
+  age: number;
+
+  constructor() {
+    this.name = ''
+    this.age = 0
+  }
+
+  sayHello(): string{
+    return `안녕하세요. 저는 ${this.name}이며, ${this.age}살 입니다.`
+  }
+}
+
+const user = new User()
+user.name = 'Lee'
+user.age = 25
+console.log(user.sayHello())
+
+```
+
+</details>
+
+<details><summary>💬 접근 수정자 </summary>
+
+- 타입스크립트의 클래스에서는 접근 수정자로 `public`,`private`,`protected`를 제공합니다.
+
+- 이들을 부여함으로써 멤버나 메서드 접근 범위를 제어할 수 있습니다.
+
+- 접근 수정자를 지정하지 않을 경우 public으로 취급 합니다.
+
+```tsx
+
+class BasePoint3D {
+  public x: number;
+  public y: number;
+  public z: number;
+}
+
+const basePoint = new BasePoint3D()
+basePoint.x
+basePoint.y
+basePoint.z
+
+class ChildPoint extends BasePoint3D {
+  constructor() {
+    super()
+    this.x
+    this.y
+    this.z
+  }
+}
+
+```
+
+</details>
+
+<details><summary>💬 실제 개발시 중요한 타입 </summary>
+
+- `Enum 타입`
+
+- `제네릭 타입`
+
+- `Union 타입과 Intersection 타입`
+
+- `리터럴 타입`
+
+- `never 타입`
+
+</details>
+
 🔋 2024.05.20
 
 <details><summary>💬 타입 앨리어스 </summary>
