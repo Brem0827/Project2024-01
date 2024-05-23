@@ -22,6 +22,164 @@
 
 [![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=guswhd284)](https://www.acmicpc.net/user/guswhd284)
 
+🔋 2024.05.23
+
+<details><summary>💬 Enum 타입 </summary>
+
+- Enum을 사용하면 이름이 붙은 상수 셋을 정의할 수 있습니다.
+
+- Enum은 자바스크립트에는 없는 기능으로, 타입스크립트에서 확장한 기능 중 하나입니다.
+
+```tsx
+
+const Direction = {
+  'Up' : 0,
+  'Down' : 1,
+  'Left' : 2,
+  'Right' : 3
+}
+
+```
+
+```tsx
+
+enum Direction {
+  Up,
+  Down,
+  Left,
+  Right
+}
+
+// enum Direction을 참조
+let direction: Direction = Direction.Left
+// 2 출력
+console.log(direction)
+
+direction = 'Left' // string을 넣을 경우 에러 발생
+
+```
+
+```tsx
+
+enum Direction {
+  Up = 'Up',
+  Down = 'Down',
+  Left = 'Left',
+  Right = 'Right'
+}
+
+
+const value = 'Down'
+// 문자열에서 Enum 타입으로 변환
+const enumValue = value as Direction
+
+if(enumValue === Direction.Down) {
+  console.log('Down is selected')
+}
+
+```
+
+</details>
+
+<details><summary>💬 제네릭 타입 </summary>
+
+- 제네릭은 클래스와 함수에 대해, 그 안에서 사용하는 타입을 추상화해 외부로부터 구체적인 타입을 지정할 수 있는 기능입니다.
+
+```tsx
+
+class Queue<T> {
+  // T 값을 배열에 추가
+  private array: T[] = []
+
+  // T 타입의 배열의 첫 번째 값을 꺼낸다.
+  push(item: T) {
+    this.array.push(item)
+  }
+
+  pop(): T | undefined {
+    return this.array.shift()
+  }
+}
+
+const queue = new Queue<number>() // 숫자 타입을 다루는 큐 생성
+queue.push(111)
+queue.push(112)
+queue.push('foo') // number타입이 아니므로 컴파일시 에러 발생
+
+let str = 'bar'
+str = queue.pop()
+
+```
+
+</details>
+
+<details><summary>💬 Union 타입과 InterSection 타입 </summary>
+
+- 타입스크립트의 타입은 조합해서 사용할 수 있습니다.
+
+- 다소 복잡한 타입을 표현하고 싶을 때, 지정한 여러 타입의 합집합을 의미하는 Union 타입과 교집합을 의미하는 Intersection 타입이 있습니다.
+
+- 각각 |와 &를 사용해 타입을 정의할 수 있습니다.
+
+```tsx
+
+function printId(id: number | string) {
+  console.log(id)
+}
+
+// number이어도 정상 작동
+printId(11)
+// string이라도 정상 작동
+printId('22')
+
+```
+
+```tsx
+
+type Identity = {
+  id: number | string;
+  name: string;
+}
+
+type Contact = {
+  name: string;
+  email: string;
+  phone: string;
+}
+
+type IdentityOrContact = Identity | Contact
+
+const id: IdentityOrContact = {
+  id: '111',
+  name: 'Lee'
+}
+
+const contact: IdentityOrContact = {
+  name: 'Hana',
+  email: 'test@example.com',
+  phone: '00011112222'
+}
+
+```
+
+</details>
+
+<details><summary>💬 리터럴 타입 </summary>
+
+- |로 데이터를 구분하는 리터럴 타입을 사용하면 정해진 문자열이나 수치만 대입할 수 있는 타입으로 제어 할 수 있습니다.
+
+- `변수: 허용하는_데이터_1 | 허용하는_데이터_2 | ...`
+
+```tsx
+
+let postStatus: 'draft' | 'published' | 'deleted'
+postStatus = 'draft' // ok
+postStatus = 'drafts' // 타입 선언에 없는 문자열이 할당 되어 있으므로 컴파일 시 에러
+
+```
+
+</details>
+
 🔋 2024.05.22
 
 <details><summary>💬 클래스 </summary>
