@@ -22,6 +22,106 @@
 
 [![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=guswhd284)](https://www.acmicpc.net/user/guswhd284)
 
+
+🔋 2024.05.24
+
+<details><summary>💬 never 타입 </summary>
+
+- never 타입은 절대로 발생하지 않는 값의 종류를 나타냅니다.
+
+```tsx
+
+// 에러가 항상 반환되는 함수로 절대로 값이 정상으로 반환되지 않을 때 never 타입을 지정합니다.
+function errir(message: string): never {
+  throw new Error(message)
+}
+
+function foo(x: string | number | number[]): boolean {
+  if(typeof x === 'string') {
+    return true
+  } else if (typeof x === 'number') {
+    return false
+  }
+
+  // never을 사용해서 명시적으로 값이 반환되지 않은 것을 컴파일러에 전달할 수 있다.
+  // never을 사용하지 않으면 타입스크립트는 컴파일 에러를 일으킨다.
+  return error('Never happens')
+}
+
+```
+
+- never와 같이 유효한 사용방법으로 if 문이나 switch문에서 타입스크립트의 타입의 조건 분기에 누락이 없는 것을 보증하는 경우가 있습니다.
+
+```tsx
+// 미래에 상수가 추가될 가능성이 있는 enum 타입을 정의
+enum PageType {
+  ViewProfile,
+  EditProfile,
+  ChangePassword,
+}
+
+const getTitleText = (type: PageType) => {
+  switch(type) {
+    case PageType.ViewProfile:
+      return 'Setting'
+      case PageType.EditProfile:
+      return 'EditProfile'
+      case PageType.ChangePassword:
+      return 'ChangePassword'
+    default:
+      const wrongType: never = type
+      throw new Error(`${wrongType} is not in PageType`)
+  }
+}
+
+```
+
+</details>
+
+<details><summary>💬 옵셔널 체이닝 </summary>
+
+- 옵셔널체이닝을 사용하면 중첩된 객체의 속성이 존재하는가에 관한 조건 분기를 간단하게 기술할 수 있습니다.
+
+```tsx
+
+interface User {
+  name: string
+  social?: {
+    facebook: boolean
+    twitter: boolean
+  }
+}
+
+let user: User
+
+user = { name: 'Lee', social: { facebook: true, twitter: true } }
+console.log(user.social?.facebook)
+
+user = { name: 'Lee' }
+console.log(user.social?.facebook)
+
+```
+
+</details>
+
+<details><summary>💬 논-널 어서션 연산자 </summary>
+
+- 컴파일 옵션 `--strictNullCheck`를 지정해 컴파일하면, 타입스크립트는 일반적으로 null일 가능성이 있는 객체에 대한 접근을 에러로 취급합니다.
+
+- `null`이 아님을 나타내고 싶을 때 논-널 어서션이라는 기능을 사용해 명시적으로 컴파일러에게 문제가 없음을 전달할 수 있습니다.
+
+```tsx
+
+function processUser(user?: User) {
+  let s = user!.name
+}
+
+```
+
+- ?를 사용하는 옵셔널 체이닝과 다소 비슷하지만 논0널 어서션은 어디까지나 에러를 발생시키지 않아도 된다고 타입스크립트 컴파일러에게 알려줄 뿐이고, 실행 시에 에러가 발생할 가능성은 있습니다.
+
+</details>
+
 🔋 2024.05.23
 
 <details><summary>💬 Enum 타입 </summary>
