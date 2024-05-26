@@ -22,6 +22,168 @@
 
 [![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=guswhd284)](https://www.acmicpc.net/user/guswhd284)
 
+🔋 2024.05.26
+
+<details><summary>💬 keyof 연산자 </summary>
+
+- 타입에 대해 keyof 연산자를 사용하면 해당 타입이 가진 각 속성의 타입의 Union 타입을 반환합니다.
+
+```tsx
+
+interface User {
+  name: string;
+  age: number;
+  email: string;
+}
+
+type UserKey = keyof User
+
+const key1: UserKey = 'name'
+const key2: UserKey = 'phone'
+
+function getProperty<T, K extends keyof T>(obj: T, key: K): T[K] {
+  return obj[key]
+}
+
+const user: User = {
+  name: 'Lee',
+  age: 25,
+  email: 'test@example.com'
+}
+
+const userName = getProperty(user, 'name')
+
+const userGender = getProperty(user, 'gender')
+
+```
+
+</details>
+
+<details><summary>💬 인덱스 타입 </summary>
+
+- 인덱스 타입을 사용하면 객체의속성이 변할 때, 모아서 타입을 정의할 수 있습니다.
+
+- 각 속성에 대응하는 타입을 정의할 수 없을 때 간단하게 기술할 수 있습니다.
+
+```tsx
+
+type SupportVersions = {
+  [env: number]: boolean;
+}
+
+let Versions: SupportVersions = {
+  102: false,
+  103: false,
+  104: true,
+  'v105': true
+}
+
+```
+
+</details>
+
+<details><summary>💬 readonly </summary>
+
+- 타입스크립트에서는 타입 앨리어스, 인터페이스, 클래스에 대해 readonly 속성을 지정할 수 있습니다.
+
+- `readonly`가 지정된 속성은 변경할 수 없습니다.
+
+```tsx
+
+type User = {
+  readonly name: string;
+  readonly gender: string;
+}
+
+let user: User = { name: 'Lee', gender: 'Male' }
+
+user.gender = 'Female' // 에러 발생
+
+```
+
+- 자바스크립트의 재대입 불가 기능으로 const 기능이 있으나, 둘의 용도는 다릅니다.
+
+- const는 변수의 대입에 대해 수행하는 선언, readonly는 객체나 클래스의 속성에 대해 수행하는 선언으로 컴파일시 에러를 감지할 수 있습니다.
+
+```tsx
+
+type User = {
+  name: string;
+  gender: string;
+}
+
+type UserReadonly = Readonly<User>
+
+let user: User = { name: 'Lee', gender: 'Male' }
+let userReadonly: UserReadonly = { name: 'Lee', gender: 'Male' }
+
+user.name = 'Hyun' // OK
+userReadonly.name = 'Hyun' // 컴파일 시 에러 발생
+
+```
+
+</details>
+
+<details><summary>💬 unknown </summary>
+
+- `unknown`은 any와 마찬가지로 모든 값을 대입할 수 있는 타입입니다.
+
+- 하지만 any와 달리 대입된 값 상태 그대로는 임의의 함수나 속성으로 접근할 수 없습니다.
+
+- typeof나 instanceof 등을 사용해 타입 안전한 상태를 만든 뒤, 변숫값에 접근하는 함수 등의 처리를 실행할 수 있습니다.
+
+
+```tsx
+
+const x: unknown = 123
+const y: unknown = 'Hello'
+
+console.log(x.toFixed(1))
+console.log(x.toLowerCase())
+
+if(typeof === 'string') {
+  console.log(x.toFixed(1)) // 123.0
+}
+
+if(typeof y === 'string') {
+  console.log(y.toLowerCase()) // Hello
+}
+
+```
+
+</details>
+
+<details><summary>💬 비동기 Async/Await </summary>
+
+- 비동기 처리 API인 Promise의 간략한 구문에 해당하는 것이 `Async/Await`의 기능입니다.
+
+- 이 기능은 타입스크립트라기보다는 ECMAScript 사양 범위에 해당합니다.
+
+```tsx
+
+function fetchFromServer(id: string): Promise<{success: boolean}> {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve({success: true})
+    }, 100)
+  })
+}
+
+// async를 사용하기 위해서는 async function 안에서만 호출해야 한다.
+async function asyncFunc(): Promise<string> {
+  const result = await fetchFramServer('111')
+  return `The result: ${result.success}`
+}
+(async () => {
+  const result = await asyncFunc()
+  console.log(result)
+})()
+
+asyncFunc().then(result => console.log(result))
+
+```
+
+</details>
 
 🔋 2024.05.24
 
