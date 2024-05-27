@@ -22,5 +22,10 @@
     "postcss": "^8",
     "tailwindcss": "^3.4.1",
     "typescript": "^5.4.5"
-  }
+  },
+  "description": "<!-- header 영역 -->\r <p align=\"center\">\r  <img width=\"100px\" src=\"https://res.cloudinary.com/anuraghazra/image/upload/v1594908242/logo_ccswme.svg\" align=\"center\" alt=\"GitHub Readme Stats\" />\r  <h2 align=\"center\">이현종</h2>\r  <p align=\"center\">📖 리액트 및 Next.js 연습</p>\r </p>",
+  "main": "index.js",
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
 }
