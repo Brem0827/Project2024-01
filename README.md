@@ -22,6 +22,137 @@
 
 [![Solved.ac 프로필](http://mazassumnida.wtf/api/v2/generate_badge?boj=guswhd284)](https://www.acmicpc.net/user/guswhd284)
 
+🔋 2024.06.04
+
+<details><summary>💬 React Hooks </summary>
+
+- `React Hooks`는 훅을 통해 함수 컴포넌트 안의 상태나 라이프사이클을 다루기 위한 기능입니다.
+
+- 훅은 다루는 대상이나 기능에 따라 여러 종류가 있습니다.
+
+- 리액트가 공식으로 제공하는 훅은 10종류이며, 훅을 조합하여 커스텀 훅을 구현할 수 있습니다.
+
+  <details><summary>💬 useState와 useReducer </summary>
+
+  - useState와 useReducer는 상태를 다루기 위한 훅입니다.
+
+  - 이 훅들을 사용하면 컴포넌트는 내부 상태를 가지며, 해당 상태의 변화에 따라 표시를 변경할 수 있습니다.
+
+  * `useState`
+
+  - useState는 이름 그대로 상태를 다루기 위한 훅입니다.
+
+  - useState()로 하나의 새로운 상태를 작성합니다.
+
+  - 첫 번째 인수에 전달한 값이 초기 상태가 됩니다.
+
+  - useState()의 반환값은 배열이며, 배열의 첫 번째에 현재 상태를 유지할 변수, 두 번째에 업데이트 함수를 입력합니다.
+
+  - `const [상태, 업데이트 함수] = useState(초기 상태)`
+
+  </details>
+
+</details>
+
+🔋 2024.06.01
+
+<details><summary>💬 Context </summary>
+
+- props에서는 부모로부터 자식의 컴포넌트로 임의의 데이터를 전달할 수 있습니다.
+
+- 데이터를 전달하는 또 한가지 방법으로 `Context`가 있습니다.
+
+- Context를 사용하면 데이터를 부모로부터 직접 전달하지 않아도 컴포넌트가 필요한 데이터를 참조할 수 있습니다.
+
+- props를 사용할 때는 필요한 컴포넌트에 도달할 때까지 props를 사용해서 전달해야 합니다.
+
+- 완전히 동일한 데이터를 그대로 props로 전달하는 방법을 props 버킷 릴레이라고 부릅니다.
+
+```tsx
+
+import React from 'react'
+
+const TitleContext = React.createContext('')
+
+const Title = () => {
+  return (
+    <TitleContext.Consumer>
+    {(title) => {
+      return <h1>{title}</h1>
+    }}
+    </TitleContext.Consumer>
+  )
+}
+
+const Page = () => {
+  const title = 'React Book'
+
+  return (
+    <TitleContext.Provider value={title}>
+      <Header />
+    </TitleContext.Provider>
+  )
+}
+
+export default Page
+
+```
+
+</details>
+
+🔋 2024.05.31
+
+<details><summary>💬 FC와 VFC </summary>
+
+- 정의한 컴포넌트를 대입하는 변수에 FC, VFC 등의 타입을 지정 합니다.
+
+- FC는 children을 갖는 컴포넌트를 FC, 갖지 않는 컴포넌트에는 FVC라는 타입을 붙였습니다.
+
+- 리액트 18부터는 VFC를 권장하지 않게 됐고, FC에서는 children이 삭제되었습니다.
+
+- 따라서 모든 컴포넌트는 FC 타입을 지정하고, children을 사용할 때는 props 타입 안에서 지정해야 합니다.
+
+```tsx
+
+import React from 'react'
+
+type ContainerProps = {
+  title: string
+  children: React.ReactNode
+}
+
+const Container: React.FC<ContainerProps> = (props) => {
+  const { title, children } = props
+
+  return (
+    <div style={{ background: 'red' }}>
+    <span>{title}</span>
+    <div>{children}</div>
+  )
+}
+
+```
+
+- FC도 다음과 같은 이유로 잘 사용되지 않는 경향이 있습니다.
+
+* FC에서 암묵적으로 정의된 displayName이나 defaultProps는 최근 사용되지 않거나, 권장되지 않는다.
+
+* props의 타입 정의에 제네릭을 사용하는 경우, FC에 적절한 타입을 지정할 수 없다.
+
+</details>
+
+🔋 2024.05.29
+
+<details><summary>💬 리액트에서의 타입 </summary>
+
+- 리액트에서 사용하는 타입에 관해 바로 앞에서 만든 컴포넌트를 기반으로 설명합니다.
+
+- 함수 컴포넌트는 임의의 객체를 `props`로서 인수로 가지며, `JSX.Element` 타입의 값을 반환하는 함수가 됩니다.
+
+- 인수인 props에 타입 에너테이션을 붙여서 부모 컴포넌트로부터 받을 수 있는 값을 제한할 수 있습니다.
+
+</details>
+
 🔋 2024.05.27
 
 <details><summary>💬 리액트의 기본 키워드 </summary>
