@@ -1,0 +1,60 @@
+/* main menu*/
+.Menu{
+    font-family: 'Single Day', cursive;
+}
+
+ul{
+    width: 100%;
+    margin:0;
+    height:30px;
+    padding: 15px 10px 8px;
+    background: rgb(49,49,49);
+    list-style: none;
+    position: fixed;
+    top: 0;
+}
+
+ul li{
+    float: left;
+    text-align: center;
+    position: relative;
+    margin: 5px;
+    width: 90px;
+    text-decoration: none;
+    font-weight: bold;
+    background: rgb(49,49,49);
+}
+ul li a{
+    color: rgb(255,255,255);
+    font-size:20px;
+    font-weight: normal;
+    display: block;
+    text-decoration: none;
+    font-weight: normal;
+    font-size: 17px;
+    text-align: left;
+    font-family: 'Single Day', cursive;
+}
+ul li ul{
+    display:none;
+    height:auto;
+    padding:0px;
+    margin:0px;
+    border:0px;
+    position:absolute;
+    width:100px;
+    z-index:200;
+}
+
+.dropdown{
+    font-family: 'Single Day', cursive;
+    position: absolute;
+    display: none;
+}
+ul li:hover ul.dropdown{
+    display: block;
+}
+
+a:hover{
+    color:violet;
+}

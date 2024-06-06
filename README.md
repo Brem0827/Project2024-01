@@ -50,6 +50,28 @@
 
   - `const [상태, 업데이트 함수] = useState(초기 상태)`
 
+  * `useReducer`
+
+  - useReducer는 상태를 다루기 위한 또 하나의 훅입니다.
+
+  - useReducer를 사용하면 복잡한 상태 전이를 간단하게 기술할 수있습니다.
+
+  - 배열이나 객체 등의 여러 데이터를 모은 것을 상태로 다루는 경우에 많이 사용합니다.
+  
+  - useState에서는 업데이트 함수에 다음상태를 직접 전달 했지만, useReducer에서는 업데이트 함수에 action이라 불리는 데이터를 전달합니다.
+
+  - 현재 상태와 action을 전달하면 다음 상태를 반환하는 reducer라는 함수를 사용합니다.
+
+  ```tsx
+
+  reducer(현재 상태, action) {
+    return 다음 상태
+  }
+
+  const [현재 상태, dispatch] = useReducer(reducer, reducer에 전달되는 초기 상태)
+
+  ```
+
   </details>
 
 </details>
