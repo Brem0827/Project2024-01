@@ -1,9 +1,9 @@
 /* main menu*/
-.Menu{
+.NavMenu{
     font-family: 'Single Day', cursive;
 }
 
-ul{
+.NavList{
     width: 100%;
     margin:0;
     height:30px;
@@ -14,7 +14,7 @@ ul{
     top: 0;
 }
 
-ul li{
+.NavList li{
     float: left;
     text-align: center;
     position: relative;
@@ -24,7 +24,7 @@ ul li{
     font-weight: bold;
     background: rgb(49,49,49);
 }
-ul li a{
+.NavList li a{
     color: rgb(255,255,255);
     font-size:20px;
     font-weight: normal;
@@ -35,7 +35,7 @@ ul li a{
     text-align: left;
     font-family: 'Single Day', cursive;
 }
-ul li ul{
+.NavList li ul{
     display:none;
     height:auto;
     padding:0px;
@@ -46,15 +46,11 @@ ul li ul{
     z-index:200;
 }
 
-.dropdown{
+.NavDropdown{
     font-family: 'Single Day', cursive;
     position: absolute;
     display: none;
 }
-ul li:hover ul.dropdown{
+.NavList li:hover ul.dropdown{
     display: block;
-}
-
-a:hover{
-    color:violet;
 }

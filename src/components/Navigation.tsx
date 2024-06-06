@@ -1,14 +1,14 @@
 import React from 'react';
-import './components/main.css';
+import styles from '@/components/Navigation.module.css';
 
-function Navigation() {
+const Navigation: React.FC = () => {
   return (
     <div>
-      <nav className="Menu">
-        <ul>
-            <li className = "logo">이현종</li>
+      <nav className={styles.NavMenu}>
+        <ul className={styles.NavList}>
+            <li className ={styles.NavLogo}>이현종</li>
             <li><a href="#">OnePage</a>
-                <ul className = "dropdown">
+                <ul className = {styles.NavDropdown}>
                     <li><a href="#">메인</a></li>
                     <li><a href="#box">박스</a></li>
                     <li><a href="#multimedia">멀티미디어</a></li>
