@@ -1,56 +1,64 @@
-/* main menu*/
-.NavMenu{
+/* Main Menu */
+.NavMenu {
     font-family: 'Single Day', cursive;
 }
 
-.NavList{
+.NavLogo {
+    font-size: 25px;
+}
+
+.NavList {
     width: 100%;
-    margin:0;
-    height:30px;
-    padding: 15px 10px 8px;
-    background: rgb(49,49,49);
+    margin: 0;
+    padding: 15px 15px 8px;
+    background: rgb(49, 49, 49);
     list-style: none;
     position: fixed;
     top: 0;
+    height: 60px;
+    z-index: 1000; /* Ensures the nav stays above other content */
 }
 
-.NavList li{
+.NavList li {
     float: left;
     text-align: center;
     position: relative;
-    margin: 5px;
+    margin-top: 5px;
     width: 90px;
-    text-decoration: none;
-    font-weight: bold;
-    background: rgb(49,49,49);
-}
-.NavList li a{
-    color: rgb(255,255,255);
-    font-size:20px;
-    font-weight: normal;
-    display: block;
-    text-decoration: none;
-    font-weight: normal;
-    font-size: 17px;
-    text-align: left;
-    font-family: 'Single Day', cursive;
-}
-.NavList li ul{
-    display:none;
-    height:auto;
-    padding:0px;
-    margin:0px;
-    border:0px;
-    position:absolute;
-    width:100px;
-    z-index:200;
+    background: rgb(49, 49, 49);
 }
 
-.NavDropdown{
+.NavList li a {
+    color: rgb(255, 255, 255);
+    font-size: 17px;
+    display: block;
+    text-decoration: none;
+    text-align: left;
     font-family: 'Single Day', cursive;
-    position: absolute;
-    display: none;
+    padding: 3px;
 }
-.NavList li:hover ul.dropdown{
+
+.NavList li ul {
+    display: none;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 170px;
+    background: rgb(49, 49, 49);
+    z-index: 200;
+    list-style: none;
+}
+
+.NavList li ul li {
+    width: 100%;
+}
+
+.NavDropdown {
+    font-family: 'Single Day', cursive;
+}
+
+.NavList li:hover ul {
     display: block;
 }
