@@ -28,45 +28,19 @@
     display: flex;
     justify-content: center; /* 수평 중앙 정렬 */
     align-items: center; /* 수직 중앙 정렬 */
-    flex-direction: column;
+    flex-direction: row; /* Change to row to align items horizontally */
     margin-top: 50px; /* 캐러셀과 뉴스 섹션 사이의 간격 */
-}
-
-.MainNews1 {
+  }
+  
+  .MainNews1, .MainNews2, .MainNews3 {
     text-align: center; /* 텍스트 중앙 정렬 */
-    margin-top: 20px;
-}
-
-.MainNews1 img {
+    margin: 0 10px 0 120px; /* Adjust margin to add space between horizontal items */
+  }
+  
+  .MainNews1 img, .MainNews2 img, .MainNews3 img {
     max-width: 100%; /* 이미지가 부모 요소의 너비를 넘지 않도록 조정 */
     height: auto; /* 비율을 유지하면서 이미지 높이를 자동으로 조정 */
     border: 2px solid #ddd; /* 이미지 테두리 */
     border-radius: 10px; /* 이미지 둥근 모서리 */
     height: 200px;
-}
-
-.MainNews2 {
-    text-align: center; /* 텍스트 중앙 정렬 */
-    margin-top: 20px;
-}
-
-.MainNews2 img {
-    max-width: 100%; /* 이미지가 부모 요소의 너비를 넘지 않도록 조정 */
-    height: auto; /* 비율을 유지하면서 이미지 높이를 자동으로 조정 */
-    border: 2px solid #ddd; /* 이미지 테두리 */
-    border-radius: 10px; /* 이미지 둥근 모서리 */
-    height: 200px;
-}
-
-.MainNews3 {
-    text-align: center; /* 텍스트 중앙 정렬 */
-    margin-top: 20px;
-}
-
-.MainNews3 img {
-    max-width: 100%; /* 이미지가 부모 요소의 너비를 넘지 않도록 조정 */
-    height: auto; /* 비율을 유지하면서 이미지 높이를 자동으로 조정 */
-    border: 2px solid #ddd; /* 이미지 테두리 */
-    border-radius: 10px; /* 이미지 둥근 모서리 */
-    height: 200px;
-}
+  }
