@@ -34,11 +34,11 @@
   
   .MainNews1, .MainNews2, .MainNews3 {
     text-align: center; /* 텍스트 중앙 정렬 */
-    margin: 0 10px 0 120px; /* Adjust margin to add space between horizontal items */
+    margin: 0 5px 0 50px; /* Adjust margin to add space between horizontal items */
   }
   
   .MainNews1 img, .MainNews2 img, .MainNews3 img {
-    max-width: 100%; /* 이미지가 부모 요소의 너비를 넘지 않도록 조정 */
+    max-width: 250px; /* 이미지가 부모 요소의 너비를 넘지 않도록 조정 */
     height: auto; /* 비율을 유지하면서 이미지 높이를 자동으로 조정 */
     border: 2px solid #ddd; /* 이미지 테두리 */
     border-radius: 10px; /* 이미지 둥근 모서리 */

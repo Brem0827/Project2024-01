@@ -1,0 +1,102 @@
+@font-face {
+    font-family: 'ONE-Mobile-POP';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/noonfonts_2105_2@1.0/ONE-Mobile-POP.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.weatherContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background-color: #f0f4f8;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    max-width: 1000px;
+    max-height: 450px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+    font-family: 'ONE-Mobile-POP';
+    font-size: 1.2em;
+    text-align: center;
+}
+
+.area{
+    color: violet;
+    font-size: 1.4em;
+}
+
+.weatherContainer:hover {
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.weatherInner {
+    width: 100%;
+    padding: 20px;
+}
+
+.searchBar {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 20px;
+}
+
+.searchBar input {
+    padding: 10px;
+    border: 2px solid #ccc;
+    border-radius: 8px;
+    width: 70%;
+    margin-right: 10px;
+    transition: all 0.3s ease;
+}
+
+.searchBar input:focus {
+    border-color: #007bff;
+    outline: none;
+}
+
+.searchBar button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff;
+    color: white;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.searchBar button:hover {
+    background-color: #0056b3;
+}
+
+.weatherDetails {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 10px;
+}
+
+.weatherItem {
+    margin-bottom: 10px;
+}
+
+.weatherItem h2 {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+}
+
+.weatherItem p {
+    margin: 0;
+    font-size: 16px;
+    color: #555;
+}
+
+.weatherIcon img {
+    margin-top: 20px;
+    width: 100px;
+    height: 100px;
+}
