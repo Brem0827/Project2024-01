@@ -7,7 +7,7 @@ const Navigation: React.FC = () => {
       <nav className={styles.NavMenu}>
         <ul className={styles.NavList}>
             <li className ={styles.NavLogo}>Test</li>
-            <li><a href="#">OnePage</a>
+            <li><a href="#">Menu</a>
                 <ul className = {styles.NavDropdown}>
                     <li><a href="./">메인</a></li>
                     <li><a href="./Login">로그인</a></li>
